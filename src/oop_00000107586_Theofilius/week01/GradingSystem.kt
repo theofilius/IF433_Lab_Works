@@ -1,9 +1,17 @@
 package oop_00000107586_Theofilius.week01
 
+
 fun main() {
     var name = "John Thor"
     var score = 80
 
     // Concatenation gaya lama
     println("Nama: $name, Nilai: $score")
+    val grade = when (score) {
+        in 90.. 100 -> "A"
+        in 80.. 89 -> "B"
+        in 70.. 79 -> "C"
+        else -> "D"
+    }
+    println("Grade kamu: $grade")
 }
