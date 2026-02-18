@@ -12,7 +12,6 @@ class Employee(val name: String) {
     }
     private var performance: Int = 3
 
-    // Tax (Pajak) dihitung 10% dari gaji saat ini
     val tax: Double
         get() = salary * 0.1
 
