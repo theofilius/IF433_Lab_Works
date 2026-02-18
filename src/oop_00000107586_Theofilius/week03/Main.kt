@@ -1,13 +1,8 @@
 package oop_00000107586_Theofilius.week03
 
 fun main() {
-    val e = Employee("Budi")
-
-    e.salary = -1000
-    e.salary = 5_000_000
-    println("Gaji: ${e.salary}")
-
-    e.increasePerformance()
-
-    println("Pajak yang harus dibayar: ${e.tax}")
+    val weapon = Weapon("Dragon Slayer")
+    weapon.damage = -50
+    weapon.damage = 9999
+    println("Tier senjata: ${weapon.tier}")
 }
