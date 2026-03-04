@@ -33,4 +33,14 @@ fun main() {
     println("hitungLuas(4) = $luasPersegi")
     println("hitungLuas(6, 3) = $luasPersegiPanjang")
     println("hitungLuas(7.0) = $luasLingkaran")
+
+    val eWallet = EWallet(accountName = "Theo Wallet", balance = 50000.0)
+    val creditCard = CreditCard(accountName = "Theo Card", limit = 100000.0)
+    val paymentMethods: List<PaymentMethod> = listOf(eWallet, creditCard)
+
+    println("=== SIMULASI PEMBAYARAN ===")
+    for (method in paymentMethods) {
+        print("${method.accountName}: ")
+        method.processPayment(75000.0)
+    }
 }
