@@ -23,4 +23,14 @@ fun main() {
 
         println("----------------------")
     }
+
+    val mathHelper = MathHelper()
+    val luasPersegi = mathHelper.hitungLuas(4)
+    val luasPersegiPanjang = mathHelper.hitungLuas(6, 3)
+    val luasLingkaran = mathHelper.hitungLuas(7.0)
+
+    println("=== OVERLOADING MATHHELPER ===")
+    println("hitungLuas(4) = $luasPersegi")
+    println("hitungLuas(6, 3) = $luasPersegiPanjang")
+    println("hitungLuas(7.0) = $luasLingkaran")
 }
