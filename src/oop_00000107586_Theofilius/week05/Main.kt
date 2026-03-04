@@ -42,5 +42,11 @@ fun main() {
     for (method in paymentMethods) {
         print("${method.accountName}: ")
         method.processPayment(75000.0)
+
+        if (method is EWallet) {
+            method.topUp(50000.0)
+            print("${method.accountName} (coba lagi): ")
+            method.processPayment(75000.0)
+        }
     }
 }
