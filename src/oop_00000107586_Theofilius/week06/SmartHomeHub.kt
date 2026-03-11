@@ -21,6 +21,7 @@ class SmartHomeHub {
                 device.startRecord()
             }
             if (device is SmartSpeaker) {
+                println("Smart speaker \"${device.name}\" mengaktifkan sirine.")
                 device.playMusic("Sirine Peringatan")
             }
         }
