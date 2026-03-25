@@ -29,4 +29,8 @@ fun main() {
     }
 
     println(uiMessage)
+
+    println("\n=== SIMULASI CORE RPG ===")
+    GameManager.startGame()
+    GameManager.startGame()
 }
