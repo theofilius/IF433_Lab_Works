@@ -24,7 +24,8 @@ fun main() {
 
     val uiMessage = when(response) {
         is ApiResponse.Success -> "Tampilkan: ${response.data}"
-        is ApiResponse.Error -> "Munculkan alert: ${response.message}"
+        is ApiResponse.Error -> "Munculkan alert" +
+                ": ${response.message}"
         ApiResponse.Loading -> "Tampilkan Spinner"
     }
 
@@ -33,4 +34,13 @@ fun main() {
     println("\n=== SIMULASI CORE RPG ===")
     GameManager.startGame()
     GameManager.startGame()
+
+    println("\n=== SIMULASI FACTORY & ENUM ===")
+    println("Drop chance LEGENDARY: ${ItemRarity.LEGENDARY.dropChance}%")
+
+    val starterWeapon = Weapon.forgeStarterSword()
+    println(
+        "Starter Weapon: ${starterWeapon.item.name} " +
+            "(Damage: ${starterWeapon.item.damage}, Rarity: ${starterWeapon.item.rarity}, Durability: ${starterWeapon.durability})"
+    )
 }
