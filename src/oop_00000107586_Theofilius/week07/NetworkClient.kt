@@ -9,7 +9,7 @@ class NetworkClient private constructor(val url: String) {
             return NetworkClient(url)
         }
 
-        // Backward-compatible untuk typo yang sudah terlanjur dipakai di Main.kt / instruksi.
+
         fun createClien(): NetworkClient {
             return createClient()
         }
