@@ -4,9 +4,14 @@ class NetworkClient private constructor(val url: String) {
     companion object {
         const val BASE_URL = "https://api.umn.ac.id"
 
+        fun createClient(url: String = BASE_URL): NetworkClient {
+            println("Membangun NetworkClient dengan url: $url")
+            return NetworkClient(url)
+        }
+
+        // Backward-compatible untuk typo yang sudah terlanjur dipakai di Main.kt / instruksi.
         fun createClien(): NetworkClient {
-            println("Membangun NetworkClient dengan BASE_URL: $BASE_URL")
-            return NetworkClient("BASE_URL")
+            return createClient()
         }
     }
     fun connect() {
