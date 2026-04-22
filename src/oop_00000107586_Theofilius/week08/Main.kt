@@ -30,4 +30,11 @@ fun main() {
         val text = item as? String
         text?.let { println("Ditemukan teks: ${it.uppercase()}") }
     }
+    println("\n=== TEST THE RED BUTTON (11) ===")
+    val toxicData: String? = null
+    try {
+        val length = toxicData!!.length
+    } catch (e: NullPointerExecption) {
+        println("CRASH (NP) ! Jangan gunakan !! secara sembarangan")
+    }
 }
