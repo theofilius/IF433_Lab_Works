@@ -14,11 +14,24 @@ fun main() {
     for (raw in rawApiData) {
         try {
             parser.parseProduct(raw)?.let { product ->
+                when (product) {
+                    is Electronic -> {
+                        val apiWarranty = raw["warranty"] as? Int
+                        val line = when (apiWarranty) {
+                            null -> "${product.name} (Fallback Warranty ${product.warrantyMonths})"
+                            else -> "${product.name} (Warranty ${product.warrantyMonths})"
+                        }
+                        println(line)
+                    }
+
+                    is Clothing -> println("${product.name} (Size ${product.size})")
+                }
+
                 parser.checkout(product)
             }
         } catch (e: IllegalArgumentException) {
-            println("WARNING: ${e.message} | raw=$raw")
+            val itemName = (raw["name"] as? String) ?: "<unknown>"
+            println("WARNING: ${e.message} | item=$itemName | raw=$raw")
         }
     }
 }
-
