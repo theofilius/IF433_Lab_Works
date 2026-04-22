@@ -33,8 +33,11 @@ fun main() {
     println("\n=== TEST THE RED BUTTON (11) ===")
     val toxicData: String? = null
     try {
-        val length = toxicData!!.length
-    } catch (e: NullPointerExecption) {
-        println("CRASH (NP) ! Jangan gunakan !! secara sembarangan")
+        val length = requireNotNull(toxicData) {
+            "CRITICAL EXCEPTION: toxicData tidak boleh null!"
+        }.length
+        println("Panjang toxicData: $length")
+    } catch (e: IllegalArgumentException) {
+        println(e.message)
     }
 }
