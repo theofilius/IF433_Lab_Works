@@ -16,4 +16,4 @@ data class Clothing(
     override val name: String,
     val size: String,
 ) : Product()
-
+//
