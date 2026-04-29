@@ -12,7 +12,7 @@ fun main() {
     // Mutable List (can be modified)
     val mutableList = mutableListOf("AAPL", "TSLA", "NVDA")
     println("Mutable list (before): $mutableList")
-
+//
     mutableList.add("MSFT")
     mutableList.remove("TSLA")
     println("Mutable list (after): $mutableList")
