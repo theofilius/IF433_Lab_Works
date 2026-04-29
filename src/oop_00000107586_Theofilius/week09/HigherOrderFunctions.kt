@@ -5,5 +5,11 @@ fun main() {
 
     val evenNumbers = numbers.filter { it % 2 == 0 }
     println("Even numbers: $evenNumbers")
-}
 
+    val sortedDescending = evenNumbers.sortedByDescending { it }
+    println("Sorted descending: $sortedDescending")
+
+    sortedDescending.forEach { number ->
+        println("Number: $number")
+    }
+}
