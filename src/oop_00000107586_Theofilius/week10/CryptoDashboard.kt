@@ -18,4 +18,18 @@ fun main() {
     txRepo.add(Transaction("TX-001", 0.01))
     txRepo.add(Transaction("TX-002", 150.0))
     txRepo.add(Transaction("TX-003", 0.5))
+
+    val txResponse = ApiResponse("200 OK", txRepo.getAll())
+    println()
+    println("Transaction Status: ${txResponse.status}")
+    txResponse.data.forEach { tx ->
+        println("Tx: ${tx.id}, Amount: ${tx.amount}")
+    }
+
+    println()
+    val searchResult = coinRepo.searchByName<Coin>("ET")
+    println("Search Result (query: ET):")
+    searchResult.forEach { coin ->
+        println("Coin: ${coin.name}, Balance: ${coin.balance}")
+    }
 }
