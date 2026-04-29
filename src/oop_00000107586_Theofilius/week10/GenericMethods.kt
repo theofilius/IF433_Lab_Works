@@ -4,3 +4,5 @@ fun <T> printData(data: T) {
     println("Data: $data")
 }
 
+fun <T> returnData(data: T): T = data
+
