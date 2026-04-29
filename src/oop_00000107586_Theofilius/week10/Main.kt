@@ -13,4 +13,13 @@ fun main() {
     printData(3.14)
     val returnedString = returnData("Kotlin Generic")
     printData(returnedString)
+
+    val numericStorage = NumericalStorage(10, 4)
+    println("Add: ${numericStorage.add()}")
+    println("Subtract: ${numericStorage.subtract()}")
+    println("Multiply: ${numericStorage.multiply()}")
+    println("Divide: ${numericStorage.divide()}")
+
+    println("Max value (Int): ${maxValue(7, 12)}")
+    println("Max value (Double): ${maxValue(2.5, 2.4)}")
 }
