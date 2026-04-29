@@ -27,7 +27,7 @@ fun main() {
     }
 
     println()
-    val searchResult = coinRepo.searchByName<Coin>("ET")
+    val searchResult = coinRepo.searchByName("ET")
     println("Search Result (query: ET):")
     searchResult.forEach { coin ->
         println("Coin: ${coin.name}, Balance: ${coin.balance}")
