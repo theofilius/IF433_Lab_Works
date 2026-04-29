@@ -9,4 +9,8 @@ fun main() {
 
     val pairBox = PairBox("UMN", 2026)
     println("PairBox key: ${pairBox.getKey()}, value: ${pairBox.getValue()}")
+
+    printData(3.14)
+    val returnedString = returnData("Kotlin Generic")
+    printData(returnedString)
 }
