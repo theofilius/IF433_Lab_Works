@@ -24,4 +24,11 @@ fun main() {
     val losingTrades = closedTrades.filter { it.roe <= 0 }
     println("Losing trades size: ${losingTrades.size}")
     println(losingTrades)
+
+    val topPerformers = winningTrades
+        .sortedByDescending { it.roe }
+        .map { trade ->
+            "WIN [${trade.pair} - ${trade.position}]: +${trade.roe}% ROE (Lev: ${trade.leverage}x)"
+        }
+    println("Top performers: $topPerformers")
 }
