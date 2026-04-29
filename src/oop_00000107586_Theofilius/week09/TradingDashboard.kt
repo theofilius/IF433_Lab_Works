@@ -1,0 +1,16 @@
+package oop_00000107586_Theofilius.week09
+
+fun main() {
+    val tradeHistory = listOf(
+        TradeLog(pair = "BTCUSDT", position = "LONG", roe = 12.5, leverage = 10, status = "CLOSED"),
+        TradeLog(pair = "ETHUSDT", position = "SHORT", roe = -3.2, leverage = 5, status = "CLOSED"),
+        TradeLog(pair = "SOLUSDT", position = "LONG", roe = 25.0, leverage = 20, status = "CLOSED"),
+        TradeLog(pair = "XRPUSDT", position = "SHORT", roe = 0.0, leverage = 3, status = "CLOSED"),
+        TradeLog(pair = "BNBUSDT", position = "LONG", roe = -8.7, leverage = 8, status = "CLOSED"),
+        TradeLog(pair = "ADAUSDT", position = "LONG", roe = 6.1, leverage = 12, status = "OPEN")
+    )
+
+    println("Trade history size: ${tradeHistory.size}")
+    println(tradeHistory)
+}
+
