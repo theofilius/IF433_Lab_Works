@@ -12,5 +12,8 @@ fun main() {
 
     println("Trade history size: ${tradeHistory.size}")
     println(tradeHistory)
-}
 
+    val closedTrades = tradeHistory.filter { it.status == "CLOSED" }
+    println("Closed trades size: ${closedTrades.size}")
+    println(closedTrades)
+}
