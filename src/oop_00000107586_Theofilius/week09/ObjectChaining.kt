@@ -15,5 +15,11 @@ fun main() {
     )
 
     println("Students: $students")
-}
 
+    val topStudentNames = students
+        .filter { it.score >= 75 }
+        .sortedBy { it.score }
+        .map { it.name }
+
+    println("Top student names: $topStudentNames")
+}
