@@ -5,6 +5,10 @@ fun main() {
     val immutableList = listOf("BTC", "ETH", "SOL", "BTC")
     println("Immutable list: $immutableList")
 
+    // Set (discard duplicates)
+    val uniqueFromList = immutableList.toSet()
+    println("Unique elements (set): $uniqueFromList")
+
     // Mutable List (can be modified)
     val mutableList = mutableListOf("AAPL", "TSLA", "NVDA")
     println("Mutable list (before): $mutableList")
@@ -13,4 +17,3 @@ fun main() {
     mutableList.remove("TSLA")
     println("Mutable list (after): $mutableList")
 }
-
