@@ -30,7 +30,10 @@ fun main() {
         .map { trade ->
             "WIN [${trade.pair} - ${trade.position}]: +${trade.roe}% ROE (Lev: ${trade.leverage}x)"
         }
-    println("Top performers: $topPerformers")
+    println("Top performers:")
+    topPerformers.forEach { line ->
+        println(line)
+    }
 
     val worstPerformers = losingTrades
         .sortedBy { it.roe }
