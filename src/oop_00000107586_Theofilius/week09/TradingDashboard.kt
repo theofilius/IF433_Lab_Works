@@ -38,4 +38,7 @@ fun main() {
             "LOSS [${trade.pair} - ${trade.position}]: ${trade.roe}% ROE (Lev: ${trade.leverage}x)"
         }
     println("Worst performers: $worstPerformers")
+
+    val uniquePairs = closedTrades.map { it.pair }.toSet()
+    println("Unique pairs: $uniquePairs")
 }
