@@ -3,9 +3,7 @@ package oop_00000107586_Theofilius.week11
 fun main() {
     val homeDevices = mutableListOf<SmartDevice>()
 
-    SmartDevice(name = "", category = "").apply {
-        name = "Philips WiZ Living Room"
-        category = "Lighting"
+    SmartDevice("Philips WiZ Living Room", "Lighting").apply {
         isOnline = true
         powerLoad = 12
     }.also { homeDevices.add(it) }
@@ -20,10 +18,7 @@ fun main() {
             homeDevices.add(it)
         }
 
-    val acInverter = run {
-        val device = SmartDevice("Daikin Inverter (Kabel 3x2.5)", "HVAC", false, 800)
-        device
-    }
+    val acInverter = run { SmartDevice("Daikin Inverter (Kabel 3x2.5)", "HVAC", false, 800) }
     homeDevices.add(acInverter)
 
     homeDevices.add(SmartDevice("Picolo's Auto Feeder", "Pet Care", true, 10))
@@ -39,4 +34,8 @@ fun main() {
 
     val totalPower = homeDevices.run { sumOf { it.powerLoad } }
     println("Total daya: $totalPower Watt")
+
+    homeDevices.forEach { device ->
+        println(device.diagnose())
+    }
 }
