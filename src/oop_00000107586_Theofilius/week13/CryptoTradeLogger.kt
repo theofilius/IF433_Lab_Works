@@ -11,3 +11,4 @@ data class TradeRecord(
     val pnl: Double
 )
 
+fun TradeRecord.toCsv(): String = "$id,$symbol,$type,$margin,$pnl"
